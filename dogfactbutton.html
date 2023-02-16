@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <h1>Dog Facts</h1>
+    <div id = "dog-text"> Dog facts pending... </div>
+    <button onClick="dogfact()" type="button" id ="dog-info">Get Dog Facts</button>
+    <head>
+        
+        <script language="javascript" type="text/javascript">
+        async function dogfact() {
+
+            const api_endpoint = "https://dog-api.kinduff.com/api/facts?number=5";
+            const response = await fetch(api_endpoint);
+            const json_response = await response.json();
+            // 
+            document.getElementById("dog-text").innerHTML = json_response.facts[0];
+        }
+
+        </script>
+    </head>
+    </html>
